@@ -24,14 +24,14 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-orange-50 dark:bg-black min-w-fit">
+  <body class="bg-orange-50 dark:bg-black w-full h-full min-w-fit">
     <HeaderMenu />
-    <main class="relative w-full h-full">
+    <main class="relative w-full h-full p-2 md:p-0">
       <div
-        class="pt-[10rem] md:pt-[12rem] pb-[3rem] flex flex-col gap-8 relative items-center"
+        class="pt-[10rem] md:pt-[12rem] pb-[3rem] flex flex-col gap-4 md:gap-8 relative items-center"
       >
         <h1
-          class="text-center font-extrabold scale-125 flex flex-col gap-2 text-gray-900 dark:text-gray-200"
+          class="text-center font-extrabold flex flex-col gap-2 text-gray-900 dark:text-gray-200"
         >
           <span class="text-7xl md:text-9x text-center">{title}</span>
           <span class="text-6xl md:text-5xl text-center">{subtitle}</span>
@@ -48,9 +48,9 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
         >
         </div>
       </div>
-      <article class="m-auto p-2 md:max-w-4xl mt-[4rem]">
+      <article class="m-auto p-2 md:max-w-4xl md:mt-[4rem]">
         <div
-          class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] mt-8 relative text-gray-800 dark:text-gray-200"
+          class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] mt-2 md:mt-8 relative text-gray-800 dark:text-gray-200"
         >
           <p class="text-center text-gray-400">"{quote}"</p>
         </div>
