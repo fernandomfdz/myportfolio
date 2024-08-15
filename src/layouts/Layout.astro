@@ -39,7 +39,12 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
         <div
           class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] relative text-gray-800 dark:text-gray-200"
         >
-          <h2 class="text-center text-xl text-gray-400">{mainParagraph}</h2>
+          <h2 class="text-center text-2xl text-gray-400">{mainParagraph}</h2>
+        </div>
+        <div
+          class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] mt-2 md:mt-8 relative text-gray-800 dark:text-gray-200"
+        >
+          <p class="text-center text-gray-400">"{quote}"</p>
         </div>
         <canvas class="fixed top-0 w-full h-full opacity -z-10" id="field">
         </canvas>
@@ -48,12 +53,9 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
         >
         </div>
       </div>
-      <article class="m-auto p-2 md:max-w-4xl md:mt-[4rem]">
-        <div
-          class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] mt-2 md:mt-8 relative text-gray-800 dark:text-gray-200"
-        >
-          <p class="text-center text-gray-400">"{quote}"</p>
-        </div>
+      <article
+        class="m-auto p-2 md:max-w-4xl md:mt-[4rem] flex flex-col gap-14"
+      >
         <slot />
       </article>
     </main>
