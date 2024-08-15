@@ -1,0 +1,65 @@
+---
+import HeaderMenu from "../components/layout/HeaderMenu.astro";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  mainParagraph?: string;
+  quote?: string;
+}
+
+const { title, subtitle, mainParagraph, quote } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Product Engineer con 8 años de experiencia desarrollando productos digitales"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-orange-50 dark:bg-black min-w-fit">
+    <HeaderMenu />
+    <main class="relative w-full h-full">
+      <div
+        class="pt-[10rem] md:pt-[12rem] pb-[3rem] flex flex-col gap-8 relative items-center"
+      >
+        <h1
+          class="text-center font-extrabold scale-125 flex flex-col gap-2 text-gray-900 dark:text-gray-200"
+        >
+          <span class="text-7xl md:text-9x text-center">{title}</span>
+          <span class="text-6xl md:text-5xl text-center">{subtitle}</span>
+        </h1>
+        <div
+          class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] relative text-gray-800 dark:text-gray-200"
+        >
+          <h2 class="text-center text-xl text-gray-400">{mainParagraph}</h2>
+        </div>
+        <canvas class="fixed top-0 w-full h-full opacity -z-10" id="field">
+        </canvas>
+        <div
+          class="absolute w-full -top-10 rounded-b-full *:rounded-b-full h-full blur-3xl mix-blend -z-10 bg-gray-600 opacity-50 content--canvas"
+        >
+        </div>
+      </div>
+      <article class="m-auto p-2 md:max-w-4xl mt-[4rem]">
+        <div
+          class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] mt-8 relative text-gray-800 dark:text-gray-200"
+        >
+          <p class="text-center text-gray-400">"{quote}"</p>
+        </div>
+        <slot />
+      </article>
+    </main>
+  </body>
+  <script is:inline src="/js/sky.js"></script>
+  <script is:inline src="/js/noise.min.js"></script>
+  <script is:inline src="/js/bgutils.js"></script>
+  <script is:inline src="/js/bgshift.js"></script>
+</html>
