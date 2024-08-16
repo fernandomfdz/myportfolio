@@ -1,0 +1,43 @@
+---
+import DarkModeSlider from "./DarkModeSlider.astro";
+---
+
+<footer class="mt-32">
+  <div class="mx-auto w-full max-w-6xl p-4 py-6 lg:py-8">
+    <div
+      class="flex flex-col md:flex-row md:items-start gap-8 justify-center items-center md:justify-between text-center md:text-left"
+    >
+      <a href="#">
+        <span class="text-sm whitespace-nowrap dark:text-white"
+          >Fernando Meseguer</span
+        >
+        <div class="grid">
+          <div>
+            <ul class="text-gray-500 dark:text-gray-400 font-medium *:mb-4">
+              <li>
+                <a href="https://flowbite.com/" class="hover:underline">Home</a>
+              </li>
+              <li>
+                <a href="https://tailwindcss.com/" class="hover:underline"
+                  >Sobre mi</a
+                >
+              </li>
+              <li>
+                <a href="https://tailwindcss.com/" class="hover:underline"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a href="https://tailwindcss.com/" class="hover:underline"
+                  >Proyectos</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <DarkModeSlider />
+</footer>
