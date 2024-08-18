@@ -1,0 +1,115 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProyectsGrid from "../../components/ProyectsGrid.astro";
+const allPosts = await Astro.glob("./*.md");
+const currentLocale = Astro.currentLocale;
+---
+
+<Layout title="Notas">
+  <div
+    class="relative sm:pb-12 sm:ml-[calc(2rem+1px)] md:ml-[calc(3.5rem+1px)] lg:ml-[max(calc(14.5rem+1px),calc(100%-50rem))]"
+  >
+    <div
+      class="hidden absolute top-3 bottom-0 right-full mr-7 md:mr-[3.25rem] w-px bg-slate-200 dark:bg-slate-800 sm:block"
+    >
+    </div>
+    <div class="space-y-16">
+      {
+        allPosts.map((post, index) => (
+          <article class="relative group">
+            <div class="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50" />
+
+            <svg
+              viewBox="0 0 9 9"
+              class="hidden absolute right-full mr-6 top-2 text-slate-200 dark:text-slate-600 md:mr-12 w-[calc(0.5rem+1px)] h-[calc(0.5rem+1px)] overflow-visible sm:block"
+            >
+              <circle
+                cx="4.5"
+                cy="4.5"
+                r="4.5"
+                stroke="currentColor"
+                class="fill-white dark:fill-slate-900"
+                stroke-width="2"
+              />
+            </svg>
+            <div class="relative">
+              <div class="w-full flex justify-between items-center">
+                <h3 class="text-base font-semibold tracking-tight text-slate-900 dark:text-slate-200 pt-8 lg:pt-0 post-title">
+                  {post.frontmatter.title}
+                </h3>
+                <time datetime="2024-06-21T15:00:00.000Z" class="text-gray-500 text-xs post-reading-time">
+                  6 minutes read
+                </time>
+              </div>
+              <div class="mt-2 mb-4 prose prose-slate prose-a:relative prose-a:z-10 dark:prose-dark line-clamp-2">
+                <p class="text-grey-200 dark:text-gray-500 post-description">
+                  {post.frontmatter.description}
+                </p>
+              </div>
+              <div class="hidden lg:flex justify-between post-author">
+                <div
+                  class="flex-1 flex flex-col gap-3 pt-2 md:flex-row md:gap-0 lg:gap-3"
+                >
+                  <div class="mr-4 w-max">
+                    <a
+                      target="_blank"
+                      class="cursor-pointer"
+                      href="https:/instagram.com/fernandomfdz"
+                      ><div class="flex items-center gap-3">
+                        <div class="flex flex-col text-gray-50 dark:text-gray-200">
+                          <span class="text-foreground mb-0 text-sm"
+                            >Fernando Meseguer
+                            </span>
+                        </div>
+                      </div>
+                      </a>
+                  </div>
+                </div>
+              </div>
+              <dl class="absolute left-0 top-0 lg:left-auto lg:right-full lg:mr-[calc(6.5rem+1px)]">
+                <dt class="sr-only">Fecha</dt>
+                <dd class="whitespace-nowrap text-sm leading-6 dark:text-slate-400">
+                  <time datetime="2024-06-21T15:00:00.000Z" class="post-date">
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                      "es-es",
+                      {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      }
+                    )}
+                  </time>
+                </dd>
+              </dl>
+            </div>
+            <div class="w-full mt-3 flex justify-between items-center">
+              <a
+                class="flex items-center text-sm text-teal-500 font-medium"
+                href={post.url}
+              >
+                <span class="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl" />
+                <span class="relative">
+                  Leer más
+                  <span class="sr-only">,{post.frontmatter.title}</span>
+                </span>
+                <svg
+                  class="relative mt-px overflow-visible ml-2.5 text-teal-300 dark:text-teal-700"
+                  width="3"
+                  height="6"
+                  viewBox="0 0 3 6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M0 0L3 3L0 6" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,19 @@
+.post-title {
+    view-transition-name: post-title;
+}
+
+.post-date {
+    view-transition-name: post-date;
+}
+
+.post-reading-time {
+    view-transition-name: post-reading-time;
+}
+
+.post-author{
+    view-transition-name: post-author;
+}
+
+.post-description {
+    view-transition-name: post-description;
+}

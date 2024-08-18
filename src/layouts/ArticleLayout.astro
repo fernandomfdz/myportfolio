@@ -1,0 +1,177 @@
+---
+import "../css/main.css";
+import { ViewTransitions } from "astro:transitions";
+import HeaderMenu from "../components/layout/HeaderMenu.astro";
+import Footer from "../components/layout/Footer.astro";
+
+import { Image } from "astro:assets";
+import developerImage from "../../public/images/developer.jpeg";
+
+import type { MarkdownLayoutProps } from "astro";
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  description: string;
+  pubDate: string;
+  author: string;
+  date: string;
+}>;
+
+const { frontmatter, url } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <script is:inline data-astro-rerun>
+      console.log(localStorage.getItem("data-theme") === "dark");
+      if (
+        [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].includes(
+          new Date().getHours()
+        ) &&
+        localStorage.getItem("data-theme") !== "dark"
+      ) {
+        document.documentElement.classList.remove("dark");
+      } else {
+        console.log("Entra y añade dark");
+        document.documentElement.className = "";
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Product Engineer con 8 años de experiencia desarrollando productos digitales"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-gray-100 dark:bg-black w-full h-full min-w-fit">
+    <main class="relative w-full h-full p-2 md:p-0">
+      <HeaderMenu />
+
+      <header
+        class="pt-[3rem] md:pt-[6rem] pb-[3rem] flex flex-col gap-4 md:gap-11 relative items-center"
+      >
+        <div class="md:max-w-screen-md w-full flex flex-col gap-4">
+          <div class="max-w-8xl mr-auto">
+            <div class="flex pt-8 pb-10">
+              <a
+                class="group flex font-semibold text-sm leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
+                href="/notes"
+                ><svg
+                  viewBox="0 -9 3 24"
+                  class="overflow-visible mr-3 text-slate-400 w-auto h-6 group-hover:text-slate-600 dark:group-hover:text-slate-300"
+                  ><path
+                    d="M3 0L0 3L3 6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path></svg
+                >Volver</a
+              >
+            </div>
+          </div>
+          <h1
+            class="w-full text-left font-bold flex flex-col items-start text-gray-50 dark:text-gray-200"
+          >
+            <span
+              class="text-left drop-shadow-md text-3xl md:text-5xl post-title"
+              >{frontmatter.title}</span
+            >
+          </h1>
+          <div
+            class="text-light flex space-x-3 text-sm text-gray-200 dark:text-gray-400"
+          >
+            <p class="post-date">
+              {new Date(frontmatter.pubDate).toLocaleDateString(
+                "es-es",
+                {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                }
+              )}
+              </p><p>•</p><p class="post-reading-time">6 minute read</p>
+          </div>
+          <div class="hidden lg:flex justify-between post-author">
+            <div
+              class="flex-1 flex flex-col gap-3 pt-2 md:flex-row md:gap-0 lg:gap-3"
+            >
+              <div class="mr-4 w-max">
+                <a
+                  target="_blank"
+                  class="cursor-pointer"
+                  href="https:/instagram.com/fernandomfdz"
+                  ><div class="flex items-center gap-3">
+                    <div class="w-10">
+                      <img
+                        alt="Fernando Meseguer avatar"
+                        loading="lazy"
+                        width="40"
+                        height="40"
+                        decoding="async"
+                        data-nimg="1"
+                        class="border-default rounded-full border w-full aspect-square object-cover"
+                        src="/images/developer.jpeg"
+                        style="color: transparent;"
+                      />
+                    </div>
+                    <div class="flex flex-col text-gray-50 dark:text-gray-200">
+                      <span class="text-foreground mb-0 text-sm"
+                        >Fernando Meseguer</span
+                      >
+                      <span class="text-foreground-lighter mb-0 text-xs"
+                        >Product Engineer</span
+                      >
+                    </div>
+                  </div></a
+                >
+              </div>
+            </div>
+          </div>
+          {
+            frontmatter.description ? (
+              <div class="md:max-w-screen-md grid grid-cols-[1fr-min(65ch,100%-1fr)] relative text-gray-800 dark:text-gray-200">
+                <h2 class="text-left text-2xl post-description">{frontmatter.description}</h2>
+              </div>
+            ) : (
+              ""
+            )
+          }
+        </div>
+        <canvas
+          class="fixed top-0 w-full h-full -z-10 opacity-0 dark:opacity-100"
+          id="field"
+          transition:persist
+        >
+        </canvas>
+        <div
+          transition:persist
+          class="absolute w-full -top-10 h-full blur-3xl mix-blend rounded-b-full *:rounded-b-full opacity-70 -z-10 dark:bg-gray-900 dark:opacity-30 bg-gradient-to-b from-transparent to-orange-50 dark:to-black content--canvas"
+        >
+        </div>
+      </header>
+      <article class="flex flex-col items-center">
+        <div
+          class="md:max-w-screen-md flex flex-col gap-4 text-gray-800 dark:text-gray-200"
+        >
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body><script transition:persist data-astro-rerun is:inline src="/js/sky.js"
+  ></script>
+  <script transition:persist data-astro-rerun is:inline src="/js/noise.min.js"
+  ></script>
+  <script transition:persist data-astro-rerun is:inline src="/js/bgutils.js"
+  ></script>
+  <script transition:persist data-astro-rerun is:inline src="/js/bgshift.js"
+  ></script>
+</html>

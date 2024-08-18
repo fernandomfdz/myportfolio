@@ -1,27 +1,42 @@
-<header class="fixed top-0 right-0 left-0 w-full md:px-4 z-50">
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<section class="fixed top-0 right-0 left-0 w-full md:px-4 z-50">
   <nav class="flex items-center justify-center mt-5 relative w-full">
     <ul
-      class="relative flex p-2 list-none rounded-full transition-all bg-gray-900 bg-opacity-10 backdrop-blur gap-1 text-gray-900 dark:text-gray-300"
+      class="relative flex p-2 list-none rounded-full transition-all bg-gray-200 dark:bg-gray-900 bg-opacity-20 backdrop-blur gap-1 text-gray-900 dark:text-gray-300"
     >
       <li>
         <a
-          href="#"
-          class="px-4 py-2 rounded-3xl transition-all flex items-center gap-2 bg-white bg-opacity-15"
-          >Home</a
+          class:list={[
+            "px-4 py-2 rounded-3xl transition-all flex items-center gap-2",
+            currentPath === "" ? "bg-white bg-opacity-30" : "",
+          ]}
+          href="/">Home</a
         >
       </li>
       <li>
         <a
-          href="#"
+          class:list={[
+            "px-4 py-2 rounded-3xl transition-all flex items-center gap-2",
+            currentPath === "me" ? "bg-white bg-opacity-30" : "",
+          ]}
+          href="/me"
           class="px-4 py-2 rounded-3xl transition-all flex items-center gap-2"
           >Sobre mi</a
         >
       </li>
       <li>
         <a
-          href="#"
+          class:list={[
+            "px-4 py-2 rounded-3xl transition-all flex items-center gap-2",
+            currentPath === "notes" ? "bg-white bg-opacity-30" : "",
+          ]}
+          href="/notes"
           class="px-4 py-2 rounded-3xl transition-all flex items-center gap-2"
-          >Blog</a
+          >Notas</a
         >
       </li>
       <li>
@@ -33,4 +48,4 @@
       </li>
     </ul>
   </nav>
-</header>
+</section>
