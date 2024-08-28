@@ -1,5 +1,5 @@
 ---
-import '../css/main.css'
+import "../css/main.css";
 import { ViewTransitions } from "astro:transitions";
 import HeaderMenu from "../components/layout/HeaderMenu.astro";
 import Footer from "../components/layout/Footer.astro";
@@ -15,10 +15,9 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="dark">
+<html lang="es">
   <head>
     <script is:inline data-astro-rerun>
-      console.log(localStorage.getItem("data-theme") === "dark");
       if (
         [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].includes(
           new Date().getHours()
@@ -27,7 +26,6 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
       ) {
         document.documentElement.classList.remove("dark");
       } else {
-        console.log("Entra y añade dark");
         document.documentElement.className = "";
         document.documentElement.classList.add("dark");
       }
@@ -45,22 +43,22 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
     <ViewTransitions />
   </head>
   <body class="bg-gray-100 dark:bg-black w-full h-full min-w-fit">
-    <main class="relative w-full h-full p-2 md:p-0">
+    <main class="relative w-full h-full">
       <HeaderMenu />
       <header
         class="pt-[10rem] md:pt-[10rem] pb-[3rem] flex flex-col gap-4 md:gap-11 relative items-center"
       >
         <h1
-          class="text-center font-bold flex flex-col text-gray-50 dark:text-gray-200"
+          class="text-center font-bold flex flex-col text-gray-800 dark:text-gray-200"
         >
           <span
-            class="text-center drop-shadow-md"
+            class="text-center dark:drop-shadow-md"
             style="font-size: clamp(3.2rem, .5692rem + 8.238vw, 13.75rem)"
             >{title}</span
           >
           {
             subtitle ? (
-              <span class="text-6xl md:text-5xl text-center drop-shadow-md leading-3">
+              <span class="text-4xl md:text-5xl text-center dark:drop-shadow-md md:leading-3">
                 {subtitle}
               </span>
             ) : (
@@ -70,7 +68,7 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
         </h1>
         {
           mainParagraph ? (
-            <div class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] relative text-gray-200 dark:text-gray-200">
+            <div class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] relative text-gray-600 dark:text-gray-200">
               <h2 class="text-center text-2xl">{mainParagraph}</h2>
             </div>
           ) : (
@@ -83,11 +81,6 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
           transition:persist
         >
         </canvas>
-        <div
-          transition:persist
-          class="absolute w-full -top-10 h-full blur-3xl mix-blend rounded-b-full *:rounded-b-full opacity-70 -z-10 dark:bg-gray-900 dark:opacity-30 bg-gradient-to-b from-transparent to-orange-50 dark:to-black content--canvas"
-        >
-        </div>
       </header>
       <article
         class="m-auto p-2 md:max-w-screen-xl md:mt-[4rem] flex flex-col gap-14"
@@ -95,25 +88,19 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
         <slot />
       </article>
 
-      { quote ? (
-		<section
-			class="w-full h-full md:p-10 flex items-center justify-center mt-32"
-		>
-			<div
-			class="flex items-center justify-center max-w-xl text-gray-800 dark:text-gray-200"
-			>
-			<p class="text-center text-gray-400">"{quote}"</p>
-			</div>
-		</section>
-	  ) : (
-		""
-	  )
-	}
-
+      {
+        quote ? (
+          <section class="w-full h-full md:p-10 flex items-center justify-center mt-32">
+            <div class="flex items-center justify-center max-w-xl text-gray-800 dark:text-gray-200">
+              <p class="text-center text-gray-800 dark:text-gray-200">"{quote}"</p>
+            </div>
+          </section>
+        ) : (
+          ""
+        )
+      }
     </main>
     <Footer />
-  </body><script transition:persist data-astro-rerun is:inline src="/js/sky.js"></script>
-  <script transition:persist data-astro-rerun is:inline src="/js/noise.min.js"></script>
-  <script transition:persist data-astro-rerun is:inline src="/js/bgutils.js"></script>
-  <script transition:persist data-astro-rerun is:inline src="/js/bgshift.js"></script>
+  </body><script transition:persist data-astro-rerun is:inline src="/js/sky.js"
+  ></script>
 </html>

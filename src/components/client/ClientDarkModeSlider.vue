@@ -61,12 +61,12 @@
         class="w-[2px] transition-all group-hover:-translate-y-[10px]
         rounded-3xl"
         :class="{
-            'bg-teal-500 -translate-y-[8px]': hour  === selectedHour,
+            'bg-teal-500 -translate-y-[8px] h-5': hour  === selectedHour,
             'group-hover:bg-teal-500': hour !== selectedHour,
             '-translate-y-[4px] ': (hour-1) === hoverHour,
             '-translate-y-[4px]': (hour+1) === hoverHour,
-            'bg-gray-400 h-8': [ 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,].includes(hour),
-            'bg-gray-400 dark:bg-gray-600 opacity-60 h-5': [ 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,].includes(hour) === false
+            'bg-gray-400 h-8': [ 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,].includes(hour) && hour !== selectedHour,
+            'bg-gray-400 dark:bg-gray-600 opacity-60 h-5': [ 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,].includes(hour) === false && hour !== selectedHour
         }"></div>
       </div>
     </div>
