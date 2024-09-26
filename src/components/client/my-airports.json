@@ -1,0 +1,94 @@
+{
+    "type": "AirportsCollection",
+    "airports": [
+        {
+            "text": "ALC",
+            "size": 0.5,
+            "country": "España",
+            "city": "ALC",
+            "lat": "38.2788241",
+            "lng": "-0.534767744962175"
+        },
+        {
+            "text": "MAD",
+            "size": 0.5,
+            "country": "España",
+            "city": "MAD",
+            "lat": "40.4896289049718", 
+            "lng": "-3.564265674657029"
+        },
+        {
+            "text": "ROM",
+            "size": 0.5,
+            "country": "Italia",
+            "city": "ROM",
+            "lat": "41.80359913128119", 
+            "lng": "12.25224296164993"
+        },
+        {
+            "text": "FLO",
+            "size": 0.5,
+            "country": "Italia",
+            "city": "FLO",
+            "lat": "43.809601234503184", 
+            "lng": "11.20348825751856"
+        },
+        {
+            "text": "VEN",
+            "size": 0.5,
+            "country": "Italia",
+            "city": "VEN",
+            "lat": "45.504872279048534", 
+            "lng": "12.347155191420107"
+        },
+        {
+            "text": "PAR",
+            "size": 0.5,
+            "country": "Francia",
+            "city": "PAR",
+            "lat": "49.0079319347774", 
+            "lng": "2.55140776945732"
+        },
+        {
+            "text": "BRU",
+            "size": 0.5,
+            "country": "Bélgica",
+            "city": "BRU",
+            "lat": "50.911551513020456", 
+            "lng": "4.511364790850113"
+        },
+        {
+            "text": "GEN",
+            "size": 0.5,
+            "country": "Suiza",
+            "city": "GEN",
+            "lat": "46.24244766099629", 
+            "lng": "6.121789029443259"
+        },
+        {
+            "text": "CAN",
+            "size": 0.5,
+            "country": "Mexico",
+            "city": "CAN",
+            "lat": "21.042123398785858", 
+            "lng": "-86.87384798685859"
+        },
+        {
+            "text": "LUX",
+            "size": 0.5,
+            "country": "Egipto",
+            "city": "LUX",
+            "lat": "25.668685648609674", 
+            "lng": "32.69726216094511"
+        },
+        {
+            "text": "CAI",
+            "size": 0.5,
+            "country": "Egipto",
+            "city": "CAI",
+            "lat": "30.11199129106375", 
+            "lng": "31.398189446992415"
+        }
+
+    ]
+}

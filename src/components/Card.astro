@@ -22,15 +22,15 @@ const {
 
 <a
   class:list={[
-    "group hover:-translate-y-1 hover:shadow-2xl hover:saturate-150 w-full rounded-3xl max-h-[20rem] relative cursor-pointer transition-all duration-500 flex flex-col",
+    "group hover:-translate-y-1 hover:shadow-2xl hover:saturate-200 w-full rounded-3xl max-h-[20rem] relative cursor-pointer transition-all duration-500 flex flex-col bg-gray-900 bg-opacity-10 dark:bg-opacity-10 border-gray-300 border-opacity-50 dark:border-gray-100 border dark:border-opacity-10 backdrop-blur",
     className,
   ]}
-  href="/work/ai"
+  href={href}
 >
   <div
     class="w-full h-full relative overflow-hidden rounded-3xl px-16 pt-11 md:p-6 md:px-6 md:pt-6 flex flex-col"
   >
-    <div class="text-right flex flex-col z-20">
+    <div class="text-right flex flex-col z-20 text-gray-200">
       <span class="font-thin">{role}</span>
       <h2 class="font-extrabold">{subject}</h2>
     </div>

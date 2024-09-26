@@ -28,23 +28,8 @@ const { frontmatter, url } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
   <head>
-    <script is:inline data-astro-rerun>
-      console.log(localStorage.getItem("data-theme") === "dark");
-      if (
-        [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].includes(
-          new Date().getHours()
-        ) &&
-        localStorage.getItem("data-theme") !== "dark"
-      ) {
-        document.documentElement.classList.remove("dark");
-      } else {
-        console.log("Entra y añade dark");
-        document.documentElement.className = "";
-        document.documentElement.classList.add("dark");
-      }
-    </script>
     <meta charset="UTF-8" />
     <meta
       name="description"
