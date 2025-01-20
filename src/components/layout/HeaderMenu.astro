@@ -13,9 +13,9 @@ const currentPath = pathname; // remove the first "/"
       <li>
         <a
           class:list={[
-            "px-4 py-2 rounded-3xl transition-all flex items-center gap-2",
+            "px-4 py-2 rounded-3xl transition-all flex items-center gap-2 text-gray-800 dark:text-white",
             currentPath === "" || currentPath === "/"
-              ? "bg-white dark:bg-gray-700 dark:bg-opacity-50 text-gray-800 dark:text-white"
+              ? "bg-white dark:bg-gray-700 dark:bg-opacity-50"
               : "",
           ]}
           href="/">Home</a
@@ -24,8 +24,10 @@ const currentPath = pathname; // remove the first "/"
       <li>
         <a
           class:list={[
-            "px-4 py-2 rounded-3xl transition-all flex items-center gap-2",
-            currentPath === "/me" ? "bg-white dark:bg-gray-700 dark:bg-opacity-50 text-gray-800 dark:text-white" : "",
+            "px-4 py-2 rounded-3xl transition-all flex items-center gap-2 text-gray-800 dark:text-white",
+            currentPath === "/me"
+              ? "bg-white dark:bg-gray-700 dark:bg-opacity-50"
+              : "",
           ]}
           href="/me"
           class="px-4 py-2 rounded-3xl transition-all flex items-center gap-2"
@@ -35,23 +37,18 @@ const currentPath = pathname; // remove the first "/"
       <li>
         <a
           class:list={[
-            "px-4 py-2 rounded-3xl transition-all flex items-center gap-2",
-            currentPath.includes("/notes") ? "bg-white dark:bg-gray-700 dark:bg-opacity-50 text-gray-800 dark:text-white" : "",
+            "px-4 py-2 rounded-3xl transition-all flex items-center gap-2 text-gray-800 dark:text-white",
+            currentPath.includes("/notes")
+              ? "bg-white dark:bg-gray-700 dark:bg-opacity-50"
+              : "",
           ]}
           href="/notes"
           class="px-4 py-2 rounded-3xl transition-all flex items-center gap-2"
           >Notas</a
         >
       </li>
-      <li>
-        <a
-          href="#"
-          class="px-4 py-2 rounded-3xl transition-all flex items-center gap-2"
-          >Proyectos</a
-        >
-      </li>
       <li class="flex items-center justify-center">
-        <ClientDarkModeButton client:load/>
+        <ClientDarkModeButton client:load />
       </li>
     </ul>
   </nav>
