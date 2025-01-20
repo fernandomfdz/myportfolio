@@ -2,17 +2,17 @@
 layout: ../layouts/ArticleLayout.astro
 title: 'Curriculum Vitae'
 pubDate: 2024-08-25
-author: 'Alumno de Astro'
+author: 'Fernando Meseguer'
 image:
     url: '/images/me-premio.jpeg'
-    alt: 'El logotipo completo de.'
+    alt: 'Entrega de premios'
 tags: ["astro", "bloguear", "aprender en público"]
 ---
 
 
 ## Curriculum Vitae
 
- [Download in PDF](/cv.pdf)
+ <a href="/cv.pdf" download>Download CV in PDF</a>
 
 ## Description
 
