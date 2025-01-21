@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/ArticleLayout.astro
 title: 'Curriculum Vitae'
-pubDate: 2024-08-25
+pubDate: 2025-01-21
 author: 'Fernando Meseguer'
 image:
     url: '/images/me-premio.jpeg'
