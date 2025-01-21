@@ -25,7 +25,7 @@ const currentPath = pathname; // remove the first "/"
         <a
           class:list={[
             "px-4 py-2 rounded-3xl transition-all flex items-center gap-2 text-gray-800 dark:text-white",
-            currentPath === "/me"
+            currentPath.includes("/me")
               ? "bg-white dark:bg-gray-700 dark:bg-opacity-50"
               : "",
           ]}
