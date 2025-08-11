@@ -1,128 +1,101 @@
 ---
-layout: ../layouts/ArticleLayout.astro
-title: 'Curriculum Vitae'
+layout: ../layouts/Me.astro
+title: 'Sobre mi'
 pubDate: 2025-01-21
 author: 'Fernando Meseguer'
 image:
-    url: '/images/me-premio.jpeg'
+    url: '/images/me-cairo.jpg'
     alt: 'Entrega de premios'
 tags: ["astro", "bloguear", "aprender en público"]
 ---
 
 
-## Curriculum Vitae
+¡Hola! Soy Fernando 😁
 
- <a href="/cv.pdf" download>Download CV in PDF</a>
+Gracias por pararte a leer esto y sobre todo por interesarte en conocerme.
 
-## Description
+Creo fírmemente que como mejor se conoce a una persona es conociendo sus aficiones. Como este artículo está destinado a que me conozcas un poco mejor, te diré las mías. Me declaro un amante/fan incondicional:
 
- Skilled in crafing user-centric digital experiences. I led the
- development and maintenance of our company's first internal component
- library, driving significant improvements in development eficiency and
- product consistency.
+- De la comida 🥘
+- De viajar ✈️
+- De mi familia y amigos 🫂
+- De Mini (un chihuahua de 1kg que es todo amor) 🐶
+- Del Real Murcia FC ⚽️
+- De desarrollar productos digitales 👨🏽‍💻
 
-## Work Experience
+Soy **Frontend/Full Stack Engineer**, y aunque parezca que no, el tiempo pasa y llevo ya más de 8 años desarrollando apps de todo tipo. He trabajado en **Minderest, un SaaS de monitorización de precios**, he hecho una extensión de navegadores, varios sistemas de diseño en código, una app IOS, una app Android, varias aplicaciones web (desde plataformas de suscripción mensual a una plataforma de crowdfunding inmobiliario hasta una app para plasmar la receta de la paella de mi padre). Y ahora en septiembre, comenzaré mi próxima aventura profesional en **Idealista**.
 
-
-###  Intern | Operations Engineer
-
-```
-⏳ Apr 2017 - Jun 2023 📍 Minderest SL, Murcia
-```
-
-
- - In charge of Decathlon Iberia Monitoring Operations
- - Built a complex price monitoring system across 100 e-commerce 
- - Project deployed successfully
-
- ---
-
-###  Operations Engineer
-
-```
-⏳ Jul 2017 - Dec 2020 📍 Minderest SL, Murcia
-```
-
-- Led the Price Monitoring Operations for internationally recognized companies like: Telefonica, Douglas, HP, Auchan, and eBay.
-- Optimized technical processes that were causing time and money issues for our clients.
-- Participated and led customer-focused worldwide conferences to make sure every project was performing as expected
-- Completely remade reporting system to cut o issues and automate quick response in case of problems on the price capture system
+Y dejo sin mencionar la cantidad de proyectos sin lanzar que voy acumulando en mi Mac esperando a unas vacaciones dedicadas a terminarlos (la realidad es que siempre aparece un vuelo o plan mejor que acapara toda mi atención 😜).
 
 ---
 
-###  Full Stack Engineer
+## Experiencia Profesional
 
-```
-⏳ Jan 2021 - Dec 2022 📍 Minderest SL, Murcia
-```
+### Idealista
+#### Senior Frontend _(Sep 2025 – Presente)_
+- Desarrollaré la sección de idealista/data encargada de integrarse en aplicaciones de alta demanda de clientes externos así como el manejo de datos orientado a gráficos y mapas.
 
-- Implemented main application features that helped the company increase its share in key markets like retail and brands using Vue JS, Symfony, and Java.
-- Led the development of a stand-alone cutting-edge browser extension that 70% of our clients used to monitor their competitor's prices without leaving their web or the competitor's website.
-- Worked with developers, designers, and product managers in a multi-cultural multi-genre highly collaborative space
+### Minderest (2017-2025)
+#### Senior Frontend | Product Engineer _(Ene 2022 – Ago 2025)_
+**Murcia, España**
+- Implementé una plataforma de diseño de componentes con CI/CD en Nexus y AWS, reduciendo en un 60% el tiempo de desarrollo y garantizando cohesión visual.
+- Lideré el desarrollo frontend de la web pública optimizada para SEO, aumentando la conversión un 30%.
+- Creé un sistema de tracking de usuarios con Amplitude y HubSpot, incrementando el MRR en un 11% y reduciendo el churn trimestral a menos del 2,25%.
+- Planifiqué y prioricé el backlog, asegurando alineación con objetivos de negocio.
+- Desarrollé soluciones para carga de grandes volúmenes de datos en tiempo real, autenticación SSO y la extensión **InSite™ Analytics** para análisis de precios en tiempo real.
 
----
+### Minderest — Full Stack Developer | Frontend Engineer _(Ene 2021 – Ene 2022)_
+- Reconstruí la funcionalidad de reportes históricos con técnicas de Big Data.
+- Implementé un algoritmo para identificar similitudes entre productos de diferentes marcas (clientes: Telefónica, HP, Sony).
 
-###  Designer | Software Engineer
-
-```
-⏳ Feb 2022 - Jul 2022 📍 Msinvs pfp SL, Madrid
-```
-
-- Designed, built, and published a multiplatform, multi-language real-estate crowdfunding platform on iOS, Android, and Web
-- Available on msinvs.com, Google Play, and App Store.
-- Designed and prototyped on Figma (low and high-fidelity models) toget feedback from the client.
-- Developed using Angular, Swi , Java, TailwindCSS, and Spring Boot.
-
----
-
-###  Front End Engineer
-
-```
-⏳ Dec 2022 - Jan 2024 📍 Minderest SL, Murcia
-```
-
-- Created, developed, implemented, and maintained the first Design System Component Library in the company that changed the way we developed User Interfaces and sped up the development times by 80%
-- Used that Design System to build minderest.com in less than a month.
-- Took charge of the User Experience, Component Development, Library Publishing and documentation.
+### Minderest — Full Stack Developer | Operations Engineer _(Abr 2017 – Ene 2021)_
+- Implementé sistemas de monitoreo de precios para más de 100 e-commerce.
+- Optimicé procesos técnicos reduciendo costes y tiempos para clientes nacionales e internacionales.
 
 ---
 
-###  Product Engineer (Present)
+## Educación
+- **Ingeniería Informática** - Universidad Oberta de Catalunya _(Sep 2025 - Presente)_
+- **Técnico Superior en Desarrollo de Aplicaciones Web** — IES Ingeniero de la Cierva, Murcia _(Jul 2017)_  
+- **Técnico Superior en Desarrollo de Aplicaciones Multiplataforma** — IES Carlos III, Cartagena _(Jul 2021)_  
+- **Microsoft Technology Associate: HTML5 Application Development Fundamentals** — Microsoft _(Jul 2021, remoto)_  
 
-```
-⏳ Jan 2024 - Present 📍 Minderest SL, Murcia
-```
+---
 
-- Led the development, maintenance, and expansion of the internal self-created Design System Component Library of the main app.
-- Landed a Technical Product Owner role, a bridge that connects the business needs of customers with the technical capabilities of the development team
-- Analyze technical requirements to develop high-demand always-up features that rely on complex systems built under diferent programming languages and environments.
+## Skills
 
-## Education
+**Frontend & UI:** Vue.js, React.js, Next.js, Nuxt.js, Angular, Astro, TailwindCSS, Sass, Storybook, Web Accessibility (a11y), Atomic Design.  
+**Backend & Infraestructura:** Node.js, PHP, Java, Spring Boot, MySQL, Postgres, Supabase, API REST, GraphQL, Docker, Kubernetes, CI/CD (Jenkins, Nexus), AWS (S3, CloudFront), Cloudflare.  
+**Data & Testing:** Apache Kafka, Flink, Cypress, Playwright, Selenium, Vitest, Amplitude, HubSpot.  
+**Metodologías & Herramientas:** Agile, Scrum, Jira, Figma, Stripe, PayPal, Auth0, Cognito, SEO Optimization, Event-Driven Architecture (EDA), TDD.  
+**Idiomas:** Español (nativo), Inglés (C1).  
 
-**Certificate of Higher Education (HNC) in Web Applications Development**
+---
 
-```
-⏳ Oct 2015 - Jul 2017 📍 IES Ingeniero de la Cierva, Murcia
-```
+## Proyectos Destacados
 
+- **[InSite™ Analytics](https://www.minderest.com/es/insite-analytics-price-tracking-extension)** — Extensión de navegador para análisis de precios en tiempo real. Implementada en Vue, Node, PHP, Java y AWS.
+- **[Web personal](https://fernandomeseguer.com)** — SPA en modo SSR con Astro, deploy en Cloudflare.
+- **Plataforma de crowdfunding inmobiliario** — Multi-dispositivo (Web PWA, iOS, Android) con Angular, Swift y Spring Boot.
+- **Plataforma de suscripciones deportivas** — PWA en Next.js y Supabase, con pagos en Stripe y análisis en Google Analytics.
 
-**Certificate of Higher Education (HNC) in Multi-platform Applications Development**
+---
 
-```
-⏳ Oct 2020 - Jul 2021 📍 CIFP Carlos III, Cartagena
-```
+## Contacto
 
---- 
- 
-
-##  Certificates
-
-**Microsoft Technology Associate**
-
-HTML5 Application Development Fundamentals
+📧 [fernandomfdz@gmail.com](mailto:fernandomfdz@gmail.com)  
+🌐 [fernandomeseguer.com](https://fernandomeseguer.com)  
+💼 [LinkedIn](https://www.linkedin.com/in/fernandomeseguerfernandez/)  
+📍 Murcia, España  
 
 
-## Links
+No podía terminar mi artículo de presentación sin enseñaros a la chihuahua de 1KG que tiene ganado el corazón de toda la familia y de toda persona que se cruza con ella. Os presento a Mini.
 
- [LinkedIn](https://www.linkedin.com/in/fernandomeseguerfernandez)
- [Personal Website](https://fernandomeseguer.com/)
+_(Descargar mi CV en PDF es algo que también podéis hacer pero voy a dejar que Mini acapare la atención)_
+
+<div class="w-full flex flex-col items-center justify-center">
+<a href="/cv.pdf" download>
+    <img class="object-cover w-auto h-96" src="/images/mini.jpg" alt="Mini, el perrito de 1kg que te va a ganar el corazón" title="Descarga mi CV en PDF haciendo click en Mini"/>
+</a>
+ <a href="/cv.pdf" download>Descarga mi CV en PDF</a>
+</div>

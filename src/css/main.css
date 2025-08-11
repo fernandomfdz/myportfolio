@@ -18,6 +18,10 @@
     view-transition-name: post-description;
 }
 
+.post-image {
+    view-transition-name: post-image;
+}
+
 #article {
     ul {
         list-style: circle;
@@ -66,4 +70,14 @@
         }
     }
 
+    img {
+        margin-bottom: 0;
+    }
+}
+
+
+body#me {
+    .toc {
+        display: none;
+    }
 }

@@ -9,9 +9,10 @@ interface Props {
   subtitle?: string;
   mainParagraph?: string;
   quote?: string;
+  showMe?: boolean;
 }
 
-const { title, subtitle, mainParagraph, quote } = Astro.props;
+const { title, subtitle, mainParagraph, quote, showMe } = Astro.props;
 ---
 
 <!doctype html>
@@ -32,43 +33,101 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
   <body class="bg-gray-100 dark:bg-black w-full h-full min-w-fit">
     <main class="relative w-full h-full">
       <HeaderMenu />
-      <header
-        class="pt-[10rem] md:pt-[10rem] pb-[3rem] flex flex-col gap-4 md:gap-11 relative items-center"
-      >
-        <h1
-          class="text-center font-bold flex flex-col text-gray-800 dark:text-gray-200"
-        >
-          <span
-            class="text-center dark:drop-shadow-md"
-            style="font-size: clamp(3.2rem, .5692rem + 8.238vw, 13.75rem)"
-            >{title}</span
-          >
-          {
-            subtitle ? (
-              <span class="text-4xl md:text-5xl text-center dark:drop-shadow-md md:leading-3">
-                {subtitle}
-              </span>
+      {
+        showMe ? (
+          <header class="pt-[10rem] md:pt-[7rem] pb-[3rem] flex flex-col gap-4 md:gap-11 relative items-center">
+            <div class="flex flex-col items-center justify-center ">
+              <a class="flex items-center justify-center relative" href="/me">
+                <div
+                  title="Conóceme!"
+                  class="relative post-image bg-gradient-to-tr from-green-200 to-emerald-600 p-1 rounded-full"
+                >
+                  <div class=" bg-gray-100 dark:bg-black p-1 rounded-full transition-all duration-300 hover:cursor-pointer hover:scale-105">
+                    <img
+                      class="m-0 p-0 object-cover w-60 h-60 rounded-full"
+                      src="/images/me-cairo.jpg"
+                    />
+                  </div>
+                </div>
+                <div class="absolute top-0 -right-32 flex flex-col text-dark dark:text-white font-light text-xs italic ml-4 mb-8 -rotate-12">
+                  <svg
+                    class="w-14 h-auto text-dark dark:text-white rotate-12"
+                    viewBox="0 0 172 70"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.154212 48.3811C0.154212 46.7298 -0.554536 43.1883 1.06681 42.1795C3.25614 40.8175 4.11978 43.4432 4.68612 45.1233C5.79983 48.4271 5.2822 53.9359 7.31001 56.6268C20.6127 33.3124 41.0151 15.872 66.3513 6.9007C91.5514 -2.02233 122.426 -3.7499 146.16 10.534C157.776 17.5251 167.422 27.6428 171.059 41.0679C171.371 42.2199 173.178 47.843 170.757 47.6134C169.496 47.4938 167.246 40.2514 166.643 39.0212C163.51 32.6256 159.445 27.1384 154.164 22.3867C136.171 6.19617 109.45 2.93071 86.5588 7.21845C71.395 10.0589 56.5347 16.3688 43.7648 25.1448C37.1733 29.6745 30.8763 34.9333 25.5702 40.9522C21.0947 46.0287 13.5372 54.2057 12.1781 61.0688C18.1918 60.1625 23.5276 53.3382 29.3964 51.5444C32.5054 50.594 36.0664 52.1185 33.9062 55.6489C32.1549 58.5111 26.505 60.3209 23.6426 61.8563C20.4486 63.5695 17.2171 65.1693 13.8774 66.5756C11.4275 67.6072 6.60152 70.8425 3.99499 69.7934C-0.613994 67.9384 0.29099 52.6144 0.154212 48.3811C0.211297 50.1473 0.154212 46.6547 0.154212 48.3811Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span class="ml-8 w-24">Click aquí para conocerme!</span>
+                </div>
+              </a>
+
+              <h1 class="text-center font-bold flex flex-col text-gray-800 dark:text-gray-200">
+                <span
+                  class="text-center dark:drop-shadow-md"
+                  style="font-size: clamp(3.2rem, .5692rem + 8.238vw, 13.75rem)"
+                >
+                  {title}
+                </span>
+                {subtitle ? (
+                  <span class="text-4xl md:text-5xl text-center dark:drop-shadow-md md:leading-3">
+                    {subtitle}
+                  </span>
+                ) : (
+                  ""
+                )}
+              </h1>
+            </div>
+
+            {mainParagraph ? (
+              <div class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] relative text-gray-600 dark:text-gray-200">
+                <h2 class="text-center text-2xl">{mainParagraph}</h2>
+              </div>
             ) : (
               ""
-            )
-          }
-        </h1>
-        {
-          mainParagraph ? (
-            <div class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] relative text-gray-600 dark:text-gray-200">
-              <h2 class="text-center text-2xl">{mainParagraph}</h2>
-            </div>
-          ) : (
-            ""
-          )
-        }
-        <canvas
-          class="fixed top-0 w-full h-full -z-10 opacity-0 dark:opacity-100"
-          id="field"
-          transition:persist
-        >
-        </canvas>
-      </header>
+            )}
+            <canvas
+              class="fixed top-0 w-full h-full -z-10 opacity-0 dark:opacity-100"
+              id="field"
+              transition:persist
+            />
+          </header>
+        ) : (
+          <header class="pt-[10rem] md:pt-[10rem] pb-[3rem] flex flex-col gap-4 md:gap-11 relative items-center">
+            <h1 class="text-center font-bold flex flex-col text-gray-800 dark:text-gray-200">
+              <span
+                class="text-center dark:drop-shadow-md"
+                style="font-size: clamp(3.2rem, .5692rem + 8.238vw, 13.75rem)"
+              >
+                {title}
+              </span>
+              {subtitle ? (
+                <span class="text-4xl md:text-5xl text-center dark:drop-shadow-md md:leading-3">
+                  {subtitle}
+                </span>
+              ) : (
+                ""
+              )}
+            </h1>
+            {mainParagraph ? (
+              <div class="max-w-4xl grid grid-cols-[1fr-min(65ch,100%-1fr)] relative text-gray-600 dark:text-gray-200">
+                <h2 class="text-center text-2xl">{mainParagraph}</h2>
+              </div>
+            ) : (
+              ""
+            )}
+            <canvas
+              class="fixed top-0 w-full h-full -z-10 opacity-0 dark:opacity-100"
+              id="field"
+              transition:persist
+            />
+          </header>
+        )
+      }
+
       <article
         class="m-auto p-2 md:max-w-screen-xl md:mt-[4rem] flex flex-col gap-14"
       >
@@ -79,7 +138,9 @@ const { title, subtitle, mainParagraph, quote } = Astro.props;
         quote ? (
           <section class="w-full h-full md:p-10 flex items-center justify-center mt-32">
             <div class="flex items-center justify-center max-w-xl text-gray-800 dark:text-gray-200">
-              <p class="text-center text-gray-800 dark:text-gray-200">"{quote}"</p>
+              <p class="text-center text-gray-800 dark:text-gray-200">
+                "{quote}"
+              </p>
             </div>
           </section>
         ) : (

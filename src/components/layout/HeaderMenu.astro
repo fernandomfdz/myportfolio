@@ -8,7 +8,7 @@ const currentPath = pathname; // remove the first "/"
 <section class="fixed top-0 right-0 left-0 w-full md:px-4 z-50">
   <nav class="flex items-center justify-center mt-5 relative w-full">
     <ul
-      class="relative flex p-2 list-none rounded-full transition-all text-xs bg-gray-200 dark:bg-gray-900 bg-opacity-20 dark:bg-opacity-10 border-gray-300 border-opacity-50 dark:border-gray-50 border dark:border-opacity-10 backdrop-blur gap-1 text-gray-300"
+      class="relative flex p-2 list-none rounded-full transition-all text-xs bg-gray-200 dark:bg-gray-900 bg-opacity-20 dark:bg-opacity-10 border-gray-300 border-opacity-50 dark:border-white border dark:border-opacity-10 backdrop-blur gap-1 text-gray-300"
     >
       <li>
         <a
@@ -18,7 +18,7 @@ const currentPath = pathname; // remove the first "/"
               ? "bg-white dark:bg-gray-700 dark:bg-opacity-50"
               : "",
           ]}
-          href="/">Home</a
+          href="/">Inicio</a
         >
       </li>
       <li>
@@ -31,20 +31,20 @@ const currentPath = pathname; // remove the first "/"
           ]}
           href="/me"
           class="px-4 py-2 rounded-3xl transition-all flex items-center gap-2"
-          >About me</a
+          >Sobre mi</a
         >
       </li>
       <li>
         <a
           class:list={[
             "px-4 py-2 rounded-3xl transition-all flex items-center gap-2 text-gray-800 dark:text-white",
-            currentPath.includes("/notes")
+            currentPath.includes("/blog")
               ? "bg-white dark:bg-gray-700 dark:bg-opacity-50"
               : "",
           ]}
-          href="/notes"
+          href="/blog"
           class="px-4 py-2 rounded-3xl transition-all flex items-center gap-2"
-          >Notes</a
+          >Blog</a
         >
       </li>
       <li class="flex items-center justify-center">
