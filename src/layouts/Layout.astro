@@ -35,7 +35,7 @@ const { title, subtitle, mainParagraph, quote, showMe } = Astro.props;
       <HeaderMenu />
       {
         showMe ? (
-          <header class="pt-[10rem] md:pt-[7rem] pb-[3rem] flex flex-col gap-4 md:gap-11 relative items-center">
+          <header class="pt-[7rem] md:pt-[7rem] pb-[3rem] flex flex-col gap-4 md:gap-11 relative items-center">
             <div class="flex flex-col items-center justify-center ">
               <a class="flex items-center justify-center relative" href="/me">
                 <div
@@ -49,7 +49,7 @@ const { title, subtitle, mainParagraph, quote, showMe } = Astro.props;
                     />
                   </div>
                 </div>
-                <div class="absolute top-0 -right-32 flex flex-col text-dark dark:text-white font-light text-xs italic ml-4 mb-8 -rotate-12">
+                <div class="hidden absolute top-0 -right-32 md:flex flex-col text-dark dark:text-white font-light text-xs italic ml-4 mb-8 -rotate-12">
                   <svg
                     class="w-14 h-auto text-dark dark:text-white rotate-12"
                     viewBox="0 0 172 70"
