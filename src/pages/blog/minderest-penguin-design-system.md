@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: 'Así se hizo · La arquitectura atómica detrás de Minderest.com - Penguin Design System'
+title: 'Así se hizo · La arquitectura atómica detrás de Minderest.com · Penguin Design System'
 pubDate: 2025-08-12
 author: 'Alumno de Astro'
 image:

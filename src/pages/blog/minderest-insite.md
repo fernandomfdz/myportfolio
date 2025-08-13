@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: 'Así se hizo · La extensión de navegadores: Minderest InSite™ Analytics'
+title: 'Así se hizo · La extensión de navegadores · Minderest InSite™ Analytics'
 pubDate: 2025-08-10
 author: 'Alumno de Astro'
 image:
