@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: 'Minderest InSite™ Analytics'
+title: 'Así se hizo · La extensión de navegadores: Minderest InSite™ Analytics'
 pubDate: 2025-08-10
 author: 'Alumno de Astro'
 image:
@@ -40,3 +40,9 @@ Si en el ejercicio de imaginación que hemos hecho para ti no era imaginación p
 <img src="/images/Price-promo-stock-monitoring-browser-extension-chrome-firefox.png" alt="">
 
 Fuente de texto e imágenes: [https://www.minderest.com/insite-analytics-price-tracking-extension](https://www.minderest.com/insite-analytics-price-tracking-extension)
+
+
+---
+**Aviso legal**
+
+_Todos los nombres comerciales, marcas registradas, logotipos, imágenes y referencias a productos o servicios mencionados en esta publicación pertenecen a sus respectivos propietarios. Minderest es una marca registrada propiedad de Minderest S.L., y yo no poseo derechos sobre ella. El contenido de este artículo refleja mi experiencia personal y profesional en el desarrollo de proyectos durante mi etapa en la empresa, y se comparte únicamente con fines informativos y divulgativos._
