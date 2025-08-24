@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
 title: 'Penguin Clicker'
-pubDate: 2025-08-13
+pubDate: 2025-08-24
 author: 'Alumno de Astro'
 image:
     url: '/images/penguin-clicker.png'
