@@ -16,21 +16,24 @@ const currentLocale = Astro.currentLocale;
           )
           .map((post, index) => (
             <a href={post.url}>
-              <article class="relative group sm:rounded-2xl group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50 cursor-pointer transition-all duration-500 flex flex-col bg-gray-900 bg-opacity-10 dark:bg-opacity-10 border-gray-300 border-opacity-50 dark:border-gray-100 border dark:border-opacity-10 backdrop-blur px-8 py-4 hover:scale-105">
+              <article class="relative group rounded-2xl group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50 cursor-pointer transition-all duration-500 flex flex-col bg-gray-900 bg-opacity-10 dark:bg-opacity-10 border-gray-300 border-opacity-50 dark:border-gray-100 border dark:border-opacity-10 backdrop-blur p-8 hover:scale-105">
                 <div class="relative">
                   <div class="w-full flex justify-between items-center">
                     <h3
-                      class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-200 pt-8 lg:pt-0 post-title title"
+                      class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-200 post-title title"
                       id={post.frontmatter.title}
                     >
                       {post.frontmatter.title}
                     </h3>
                   </div>
-                  <div class="hidden lg:flex justify-between author" id="Fernando Meseguer">
+                  <div
+                    class="hidden lg:flex justify-between author"
+                    id="Fernando Meseguer"
+                  >
                     <div class="flex-1 flex flex-col gap-3 pt-2 md:flex-row md:gap-0 lg:gap-3">
                       <div class="w-max">
                         <div class="flex items-center gap-3">
-                          <div class="flex flex-col text-gray-800 dark:text-gray-600">
+                          <div class="flex flex-col text-slate-900 dark:text-slate-200">
                             <span class="text-foreground mb-0 text-sm">
                               Fernando Meseguer
                             </span>
@@ -40,14 +43,14 @@ const currentLocale = Astro.currentLocale;
                     </div>
                   </div>
                 </div>
-                <div class="w-full mt-3 flex justify-between items-center">
-                  <div class="flex items-center text-sm text-sky-500 font-medium">
+                <div class="w-full mt-3 flex flex-col gap-2 md:flex-row justify-between md:items-center">
+                  <div class="flex items-center text-sm text-sky-700 dark:text-sky-500 font-medium">
                     <span class="relative">
                       Leer más
                       <span class="sr-only">,{post.frontmatter.title}</span>
                     </span>
                     <svg
-                      class="relative mt-px overflow-visible ml-2.5 text-sky-300 dark:text-sky-700"
+                      class="relative mt-px overflow-visible ml-2.5 text-sky-800 dark:text-sky-700"
                       width="3"
                       height="6"
                       viewBox="0 0 3 6"
@@ -63,14 +66,12 @@ const currentLocale = Astro.currentLocale;
                   <div class="flex h-full gap-2 items-center">
                     <time
                       datetime="2024-06-21T15:00:00.000Z"
-                      class="text-gray-500 text-xs"
+                      class="text-slate-900 dark:text-slate-400 text-xs"
                     >
                       {post.frontmatter.readingTime}
                     </time>
                     <dd class="whitespace-nowrap text-sm leading-6 dark:text-slate-400">
-                      <time
-                        datetime="2024-06-21T15:00:00.000Z"
-                      >
+                      <time datetime="2024-06-21T15:00:00.000Z">
                         ·{" "}
                         {new Date(post.frontmatter.pubDate).toLocaleDateString(
                           "es-es",

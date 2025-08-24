@@ -22,6 +22,9 @@ export default defineConfig({
     }),
   ],
   vite: {
-    plugins: [glsl()]
+    plugins: [glsl()],
+    build: {
+      target: 'esnext',
+    },
   }
 });

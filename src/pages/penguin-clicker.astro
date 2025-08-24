@@ -1,0 +1,11 @@
+---
+import LayoutGame from "../layouts/LayoutGame.astro";
+import PenguinClickerGame from "../components/game/PenguinClickerGame.vue";
+---
+
+<LayoutGame
+  title="Penguin Clicker" 
+  mainParagraph="Ayuda al pingüino programador a recolectar peces 🐟"
+>
+  <PenguinClickerGame client:load />
+</LayoutGame>

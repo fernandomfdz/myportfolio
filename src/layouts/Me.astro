@@ -3,6 +3,7 @@ import "../css/main.css";
 import { ViewTransitions } from "astro:transitions";
 import HeaderMenu from "../components/layout/HeaderMenu.astro";
 import Footer from "../components/layout/Footer.astro";
+import Background from "../components/client/Background.vue";
 
 import { Image } from "astro:assets";
 import developerImage from "../../public/images/developer.jpeg";
@@ -19,10 +20,9 @@ type Props = MarkdownLayoutProps<{
   readingTime: string;
   hideGoBack: boolean;
   image: {
-    url: string,
-    alt: string
+    url: string;
+    alt: string;
   };
-
 }>;
 
 const { frontmatter, url } = Astro.props;
@@ -43,6 +43,7 @@ const { frontmatter, url } = Astro.props;
     <ViewTransitions />
   </head>
   <body class="bg-gray-100 dark:bg-black w-full h-full min-w-fit" id="me">
+    <Background client:only="vue" />
     <section class="relative w-full h-full px-4 sm:px-6 md:px-8">
       <HeaderMenu />
 
@@ -52,24 +53,31 @@ const { frontmatter, url } = Astro.props;
         <div class="max-w-prose mx-auto w-full flex flex-col gap-4">
           <div class="max-w-8xl mr-auto">
             <div class="flex pt-8 pb-10">
-              { frontmatter.hideGoBack ? (
-                <a
-                  class="group flex font-semibold text-sm leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
-                  href="/notes"
-                  ><svg
-                    viewBox="0 -9 3 24"
-                    class="overflow-visible mr-3 text-slate-400 w-auto h-6 group-hover:text-slate-600 dark:group-hover:text-slate-300"
-                    ><path
-                      d="M3 0L0 3L3 6"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"></path></svg
-                  >Volver</a>
-
-              ) : ""}
-              
+              {
+                frontmatter.hideGoBack ? (
+                  <a
+                    class="group flex font-semibold text-sm leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
+                    href="/notes"
+                  >
+                    <svg
+                      viewBox="0 -9 3 24"
+                      class="overflow-visible mr-3 text-slate-400 w-auto h-6 group-hover:text-slate-600 dark:group-hover:text-slate-300"
+                    >
+                      <path
+                        d="M3 0L0 3L3 6"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Volver
+                  </a>
+                ) : (
+                  ""
+                )
+              }
             </div>
           </div>
           <h1
@@ -157,14 +165,17 @@ const { frontmatter, url } = Astro.props;
         <div
           class="w-full flex flex-col gap-4 text-gray-800 dark:text-gray-200 prose md:prose-base lg:prose-lg dark:prose-invert prose-img:rounded-xl"
         >
-          <img class="post-image" src={frontmatter.image.url} alt={frontmatter.image.alt}></img>
+          <img
+            class="post-image"
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+          />
+
           <main>
             <slot />
           </main>
         </div>
       </article>
     </section>
-    <Footer />
-  </body><script transition:persist data-astro-rerun is:inline src="/js/sky.js"
-  ></script>
+  </body><Footer />
 </html>

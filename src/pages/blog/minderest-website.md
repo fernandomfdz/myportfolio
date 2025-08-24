@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: 'Así se hizo · La web corporativa de Minderest.com'
+title: 'La web corporativa de Minderest.com'
 pubDate: 2025-08-11
 author: 'Alumno de Astro'
 image:

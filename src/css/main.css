@@ -83,3 +83,29 @@ body#me {
         display: none;
     }
 }
+
+:root {
+  --cursor-size: 26px;
+  --cursor-color: rgba(249, 249, 249, 0.85);       /* base */
+  --cursor-color-hover: rgba(0, 0, 0, 0.9);  /* hover */
+}
+
+
+:root {
+  /* Light mode colors */
+  --grad1: #3b82f6; /* azul */
+  --grad2: #9333ea; /* morado */
+  --shape1: #f59e0b; /* naranja */
+  --shape2: #10b981; /* verde */
+  --shape3: #ef4444; /* rojo */
+}
+
+.dark {
+  /* Dark mode colors */
+  --grad1: #1d4ed8; /* azul oscuro */
+  --grad2: #6d28d9; /* morado oscuro */
+  --shape1: #d97706; /* naranja apagado */
+  --shape2: #047857; /* verde oscuro */
+  --shape3: #b91c1c; /* rojo oscuro */
+}
+  

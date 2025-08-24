@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: 'Así se hizo · Unir diseño y código en la app de Minderest · Dolphin Design System'
+title: 'Unir diseño y código en la app de Minderest · Dolphin Design System'
 pubDate: 2025-08-13
 author: 'Alumno de Astro'
 image:

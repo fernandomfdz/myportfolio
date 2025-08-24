@@ -37,6 +37,5 @@ export default {
   rehypePlugins: [
     rehypeSlug,
     [rehypeAutolinkHeadings, { behavior: "prepend" }],
-    [rehypeToc, { headings: ["h2", "h3"], customizeTOC }],
   ],
 };

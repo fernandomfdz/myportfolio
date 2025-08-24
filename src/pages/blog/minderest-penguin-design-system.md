@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: 'Así se hizo · La arquitectura atómica detrás de Minderest.com · Penguin Design System'
+title: 'La arquitectura atómica detrás de Minderest.com · Penguin Design System'
 pubDate: 2025-08-12
 author: 'Alumno de Astro'
 image:
@@ -8,10 +8,6 @@ image:
     alt: 'Minderest Insite Illustration'
 tags: ["astro", "bloguear", "aprender en público"]
 ---
-
-En [este artículo](/blog/minderest-website) os he contado como logramos construir la web corporativa de Minderest en tiempo récord usando un sistema de diseño en código. Cómo se vivió desde dentro y cómo el equipo tuvo que adaptarse a un flujo de trabajo **radicalmente** diferente.
-
-## El Problema
 
 Me he dejado por contar un problema que nos encontramos durante [el desarrollo de la web corporativa](/blog/minderest-website) que me va a servir para mostrar un poco mejor este sistema de diseño. 
 
