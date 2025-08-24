@@ -4,9 +4,12 @@
       ref="canvas"
       :width="canvasWidth"
       :height="canvasHeight"
-      class="cursor-pointer rounded-lg max-w-full"
+      class="cursor-pointer rounded-lg max-w-full touch-none"
       @click="handleClick"
-      @touchstart.prevent="handleClick"
+      @touchstart="handleTouchStart"
+      @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
+      @touchcancel="handleTouchEnd"
       :style="{ 
         width: '100%', 
         maxWidth: canvasWidth + 'px',
@@ -422,11 +425,75 @@ function updatePenguinAnimation() {
   p.glowIntensity = 0.3 + Math.sin(Date.now() / 500) * 0.2
 }
 
-function handleClick(event) {
+// Variables para gestión de touch
+let touchStartTime = 0
+let hasTouchMoved = false
+
+function getEventCoordinates(event) {
   const rect = canvas.value.getBoundingClientRect()
-  const x = (event.clientX - rect.left) * (canvasWidth / rect.width)
-  const y = (event.clientY - rect.top) * (canvasHeight / rect.height)
+  let clientX, clientY
   
+  if (event.touches && event.touches.length > 0) {
+    // Touch event
+    clientX = event.touches[0].clientX
+    clientY = event.touches[0].clientY
+  } else if (event.changedTouches && event.changedTouches.length > 0) {
+    // Touch end event
+    clientX = event.changedTouches[0].clientX
+    clientY = event.changedTouches[0].clientY
+  } else {
+    // Mouse event
+    clientX = event.clientX
+    clientY = event.clientY
+  }
+  
+  const x = (clientX - rect.left) * (canvasWidth / rect.width)
+  const y = (clientY - rect.top) * (canvasHeight / rect.height)
+  
+  return { x, y }
+}
+
+function handleTouchStart(event) {
+  event.preventDefault()
+  touchStartTime = Date.now()
+  hasTouchMoved = false
+  
+  const { x, y } = getEventCoordinates(event)
+  
+  // Check if touch is on penguin immediately for visual feedback
+  const p = penguin.value
+  const distance = Math.sqrt((x - p.x) ** 2 + (y - p.y) ** 2)
+  
+  if (distance <= p.radius * 2) {
+    // Start visual feedback immediately
+    penguin.value.isClicked = true
+    penguin.value.clickTimer = 0
+  }
+}
+
+function handleTouchMove(event) {
+  // Mark that touch has moved to prevent accidental clicks
+  hasTouchMoved = true
+}
+
+function handleTouchEnd(event) {
+  event.preventDefault()
+  
+  const touchDuration = Date.now() - touchStartTime
+  
+  // Only trigger click if it was a short touch (< 500ms) and no significant movement
+  if (touchDuration < 500 && !hasTouchMoved) {
+    const { x, y } = getEventCoordinates(event)
+    processClick(x, y)
+  }
+}
+
+function handleClick(event) {
+  const { x, y } = getEventCoordinates(event)
+  processClick(x, y)
+}
+
+function processClick(x, y) {
   // Check if click is on penguin
   const p = penguin.value
   const distance = Math.sqrt((x - p.x) ** 2 + (y - p.y) ** 2)
